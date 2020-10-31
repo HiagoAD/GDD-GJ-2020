@@ -35,20 +35,20 @@ public class BasicUnitController : MonoBehaviour {
 		return this.goingToDestination == destination;
 	}
 
-	void OnTriggerEnter2D (Collider2D other) {
-		BaseTrap trap = other.GetComponent<BaseTrap> ();
-		if (trap && trap.Activated) OnHitTrap (trap);
+	public void OnHitTrap(BaseTrap trap)
+	{
+		if (trap is ManholeTrap)
+		{
+			if (!(this.hasRainBoots || this.hasUmbrella))
+				GoBackHome();
+		} else if (trap is DoveTrap)
+        {
+			Debug.Log("Dove Shit");
+        }
 	}
 
 	private bool RollChance(float chance) {
 		return Random.Range(0f, 1f) <= chance;
-	}
-
-	private void OnHitTrap (BaseTrap trap) {
-		if (trap is ManholeTrap) {
-			if (!(this.hasRainBoots || this.hasUmbrella))
-				GoBackHome ();
-		}
 	}
 
 	private void GoBackHome () {

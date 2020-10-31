@@ -69,4 +69,16 @@ public class ManholeTrap : BaseTrap
             Activate();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(Activated)
+        {
+            BasicUnitController unitController = collision.gameObject.GetComponent<BasicUnitController>();
+            if (unitController != null)
+            {
+                unitController.OnHitTrap(this);
+            }
+        }
+    }
 }
