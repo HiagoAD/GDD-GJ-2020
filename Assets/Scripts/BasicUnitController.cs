@@ -27,19 +27,17 @@ public class BasicUnitController : MonoBehaviour {
 		return this.goingToDestination == destination;
 	}
 
-	protected void OnHitTrap () {
+	protected virtual void OnHitTrap(BaseTrap trap)  {
 		GoBackHome ();
 	}
 
-	void OnTriggerEnter2D (Collider2D other) {
-		switch (other.tag) {
-			case Constants.Tags.TRAP:
-				OnHitTrap ();
-				break;
-		}
-	}
+    void OnTriggerEnter2D(Collider2D other)
+    {
+		BaseTrap trap = other.GetComponent<BaseTrap>();
+		if (trap && trap.Activated) OnHitTrap(trap);
+    }
 
-	private void GoBackHome () {
+    private void GoBackHome () {
 		Vector3 direction = (startPoint.position - destinationPoint.position).normalized;
 		this.rb.velocity = direction * this.speed;
 		this.goingToDestination = false;

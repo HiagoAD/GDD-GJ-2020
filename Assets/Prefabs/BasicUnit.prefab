@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5872676871530412492}
   - component: {fileID: 5872676871530412483}
   - component: {fileID: 5872676871530412482}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BasicUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8465879662971862301}
   - component: {fileID: 4510355897107578159}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
