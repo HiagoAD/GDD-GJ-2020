@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartSceneManager : MonoBehaviour {
-	public void MoveToGameScene() {
-		SceneManager.LoadScene(Constants.Scenes.GAME);
+	public void MoveToGameScene () {
+		SceneManager.LoadScene (Constants.Scenes.GAME);
 	}
 }
