@@ -42,8 +42,11 @@ public class BasicUnitController : MonoBehaviour {
 			if (!(this.hasRainBoots || this.hasUmbrella))
 				GoBackHome();
 		} else if (trap is DoveTrap)
-        {
-			Debug.Log("Dove Shit");
+		{
+			if (this.hasUmbrella)
+				this.hasUmbrella = false;
+			else
+				GoBackHome();
         }
 	}
 
