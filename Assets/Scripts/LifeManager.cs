@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class LifeManager : MonoBehaviour {
 	[SerializeField] private int qtLives;
 	[SerializeField] private int qtMaxLives = 3;
-	[SerializeField] private UnityEvent onLoseAllLives = new UnityEvent ();
 
 	void Start () {
 		this.qtLives = this.qtMaxLives;
@@ -15,6 +15,10 @@ public class LifeManager : MonoBehaviour {
 	public void LoseLife () {
 		this.qtLives--;
 		if (this.qtLives == 0)
-			this.onLoseAllLives.Invoke ();
+			MoveToResultsScene();
+	}
+
+	private void MoveToResultsScene() {
+		SceneManager.LoadScene (Constants.Scenes.RESULTS);
 	}
 }
