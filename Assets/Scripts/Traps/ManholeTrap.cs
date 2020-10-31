@@ -2,24 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ManholeTrap : BaseTrap
 {
     [SerializeField] float activeTime = 3f;
-    
+    [SerializeField] Sprite timerSprite = null;
+    [SerializeField] Transform timerTransform = null;
+
+    float activatedAt = 0f;
+    float deactivatedAt = 0f;
+
+    Image timer = null;
+
+    private void Update()
+    {
+
+        if(Time.time >= deactivatedAt && Activated)
+        {
+            Debug.Log("Deactivating");
+            Destroy(timer.gameObject);
+            timer = null;
+            Activated = false;
+        }
+        else
+        {
+            if (timer != null)
+            {
+                timer.fillAmount = (deactivatedAt - Time.time) / activeTime;
+            }
+        }
+    }
+
     protected override void Activate()
     {
         Debug.Log("Active");
         Activated = true;
-        StartCoroutine(Deactivate());
+        activatedAt = Time.time;
+        deactivatedAt = activatedAt + activeTime;
+
+        if(timer == null)
+        {
+            timer = new GameObject().AddComponent<Image>();
+            timer.sprite = timerSprite;
+
+            timer.type = Image.Type.Filled;
+            timer.fillAmount = 1;
+
+            UIFollower follower = timer.gameObject.AddComponent<UIFollower>();
+            follower.target = timerTransform;
+
+            timer.transform.SetParent(UIController.Instance.transform);
+        }
     }
 
-    private IEnumerator Deactivate()
-    {
-        yield return new WaitForSeconds(activeTime);
-        Debug.Log("Deactive");
-        Activated = false;
-    }
 
     protected override void OnMaxUsageReached()
     {
