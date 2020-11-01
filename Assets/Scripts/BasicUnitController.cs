@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent (typeof (Collider2D))]
 [RequireComponent (typeof (Rigidbody2D))]
@@ -12,6 +12,7 @@ public class BasicUnitController : MonoBehaviour {
 
 	[Header ("Behaviour")]
 	[SerializeField] private float speed = 1f;
+	public UnityEvent onDefeat = new UnityEvent();
 	private Transform startPoint;
 	private Transform destinationPoint;
 
@@ -168,6 +169,7 @@ public class BasicUnitController : MonoBehaviour {
 		this.transform.localScale = new Vector3(-1, 1, 1);
 		this.goingToDestination = false;
 		GetComponent<Collider2D>().enabled = false;
+		this.onDefeat.Invoke();
 	}
 
 	private void GoToDestination () {

@@ -10,6 +10,7 @@ public class MainGameSoundManager : MonoBehaviour
 
     [Header("SFX")]
     [SerializeField] AudioClip lifeLoss = null;
+    [SerializeField] AudioClip[] unitDefeated = null;
 
     private void Start()
     {
@@ -25,5 +26,15 @@ public class MainGameSoundManager : MonoBehaviour
 
     public void PlayLifeLoss() {
         this.startClip.PlayOneShot(this.lifeLoss);
+    }
+
+    public void PlayUnitDefeatedSFX() {
+        AudioClip chosenAudio = ChooseArrayElement(this.unitDefeated);
+        this.startClip.PlayOneShot(chosenAudio);
+    }
+
+    private T ChooseArrayElement<T>(T[] array) {
+        int index = Random.Range(0, array.Length);
+        return array[index];
     }
 }

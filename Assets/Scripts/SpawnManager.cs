@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpawnManager : MonoBehaviour {
 	[SerializeField] private LevelDataObject levelDef = null;
@@ -10,6 +10,9 @@ public class SpawnManager : MonoBehaviour {
 	[SerializeField] private Transform destinationPoint = null;
 	[SerializeField] private BasicUnitController spawnPrefab = null;
 	[SerializeField] private Transform spawnsParent = null;
+
+	[Header("Unit Events")]
+	public UnityEvent onUnitDefeat = new UnityEvent();
 
 	private int qtSpawned = 0;
 
@@ -28,5 +31,6 @@ public class SpawnManager : MonoBehaviour {
 	void Spawn () {
 		BasicUnitController spawnedUnit = Instantiate (this.spawnPrefab, this.startPoint.position, Quaternion.identity, this.spawnsParent);
 		spawnedUnit.Initialize (this.startPoint, this.destinationPoint, this.levelDef);
+		spawnedUnit.onDefeat.AddListener(() => this.onUnitDefeat.Invoke());
 	}
 }

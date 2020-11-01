@@ -158,6 +158,9 @@ MonoBehaviour:
   startClip: {fileID: 275427488}
   loopClip: {fileID: 165437382}
   lifeLoss: {fileID: 8300000, guid: d0dd31987e1c93c4591a904182f9cb9b, type: 3}
+  unitDefeated:
+  - {fileID: 8300000, guid: 5c21144ecfff2d7409676561ebb7de34, type: 3}
+  - {fileID: 8300000, guid: 06d2075380db1b64eb94157d848129a7, type: 3}
 --- !u!20 &4151522
 Camera:
   m_ObjectHideFlags: 0
@@ -1920,6 +1923,34 @@ PrefabInstance:
     - target: {fileID: 2986800296168160073, guid: 56c2d68ea62be2145baa9b8b1598594f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986800296168160074, guid: 56c2d68ea62be2145baa9b8b1598594f, type: 3}
+      propertyPath: onUnitDefeat.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986800296168160074, guid: 56c2d68ea62be2145baa9b8b1598594f, type: 3}
+      propertyPath: onUnitDefeat.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986800296168160074, guid: 56c2d68ea62be2145baa9b8b1598594f, type: 3}
+      propertyPath: onUnitDefeat.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986800296168160074, guid: 56c2d68ea62be2145baa9b8b1598594f, type: 3}
+      propertyPath: onUnitDefeat.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4151521}
+    - target: {fileID: 2986800296168160074, guid: 56c2d68ea62be2145baa9b8b1598594f, type: 3}
+      propertyPath: onUnitDefeat.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainGameSoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986800296168160074, guid: 56c2d68ea62be2145baa9b8b1598594f, type: 3}
+      propertyPath: onUnitDefeat.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayUnitDefeatedSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986800296168160074, guid: 56c2d68ea62be2145baa9b8b1598594f, type: 3}
+      propertyPath: onUnitDefeat.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2986800296168160075, guid: 56c2d68ea62be2145baa9b8b1598594f, type: 3}
       propertyPath: m_LocalPosition.x
