@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DoveTrap : BaseTrap
@@ -11,6 +12,8 @@ public class DoveTrap : BaseTrap
     [SerializeField] Sprite counterBGSprite = null;
     [SerializeField] Sprite counterFinishedSprite = null;
     [SerializeField] Transform counterTransform = null;
+
+    [SerializeField] UnityEvent onDoveShit = new UnityEvent();
 
     Image counter = null;
     private void Start()
@@ -41,6 +44,7 @@ public class DoveTrap : BaseTrap
         proj.Init(startSpeed, this);
         proj.transform.SetParent(startPosition);
         proj.transform.localPosition = Vector3.zero;
+        this.onDoveShit.Invoke();
     }
 
     void Update() {

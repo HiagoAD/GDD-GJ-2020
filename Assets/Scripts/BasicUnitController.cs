@@ -12,7 +12,6 @@ public class BasicUnitController : MonoBehaviour {
 
 	[Header ("Behaviour")]
 	[SerializeField] private float speed = 1f;
-	public UnityEvent onDefeat = new UnityEvent();
 	private Transform startPoint;
 	private Transform destinationPoint;
 
@@ -29,6 +28,12 @@ public class BasicUnitController : MonoBehaviour {
 	[SerializeField] private Animator ratDebuffBootUmbrella;
 	[SerializeField] private Animator defeatedShitBoot;
 	[SerializeField] private Animator defeatedWater;
+
+	[Header("Events")]
+	public UnityEvent onDefeat = new UnityEvent();
+	public UnityEvent onHitRat = new UnityEvent();
+	public UnityEvent onHitShit = new UnityEvent();
+	public UnityEvent onHitWater = new UnityEvent();
 
 	private bool goingToDestination = true;
 
@@ -93,6 +98,7 @@ public class BasicUnitController : MonoBehaviour {
 				//ActiveAnimation(defeatedWater);
 				//GoBackHome();
             }
+			this.onHitWater.Invoke();
 			return true;
 		} else if (trap is DoveTrap) {
 			if (this.hasUmbrella)
@@ -107,7 +113,7 @@ public class BasicUnitController : MonoBehaviour {
 				else StartCoroutine(ActiveHitAnimation(shitHit, defeatedShitBoot, GoBackHome));
 				//GoBackHome();
 			}
-
+			this.onHitShit.Invoke();
 			return true;
 		} else if (trap is RatTrap) {
 			if (this.hasUmbrella)
@@ -115,6 +121,7 @@ public class BasicUnitController : MonoBehaviour {
 				this.hasUmbrella = false;
 				if (this.hasRainBoots) StartCoroutine(ActiveHitAnimation(ratDebuffBootUmbrella, boot, () => { }));//ActiveAnimation(boot);
 				else StartCoroutine(ActiveHitAnimation(ratDebuffUmbrella, baseSkin, () => { }));
+				this.onHitRat.Invoke();
 				return true;
 			}
 			else if (this.hasRainBoots)
@@ -122,6 +129,7 @@ public class BasicUnitController : MonoBehaviour {
 				this.hasRainBoots = false;
 				if (this.hasUmbrella) StartCoroutine(ActiveHitAnimation(ratDebuffBootUmbrella, umbrella, () => { }));
 				else StartCoroutine(ActiveHitAnimation(ratDebuffBoot, baseSkin, () => { }));
+				this.onHitRat.Invoke();
 				return true;
 			}
 			else
