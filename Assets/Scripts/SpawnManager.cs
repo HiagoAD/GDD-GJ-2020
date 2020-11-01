@@ -13,6 +13,9 @@ public class SpawnManager : MonoBehaviour {
 
 	[Header("Unit Events")]
 	public UnityEvent onUnitDefeat = new UnityEvent();
+	public UnityEvent onUnitHitRat = new UnityEvent();
+	public UnityEvent onUnitHitShit = new UnityEvent();
+	public UnityEvent onUnitHitWater = new UnityEvent();
 
 	private int qtSpawned = 0;
 
@@ -32,5 +35,8 @@ public class SpawnManager : MonoBehaviour {
 		BasicUnitController spawnedUnit = Instantiate (this.spawnPrefab, this.startPoint.position, Quaternion.identity, this.spawnsParent);
 		spawnedUnit.Initialize (this.startPoint, this.destinationPoint, this.levelDef);
 		spawnedUnit.onDefeat.AddListener(() => this.onUnitDefeat.Invoke());
+		spawnedUnit.onHitRat.AddListener(() => this.onUnitHitRat.Invoke());
+		spawnedUnit.onHitShit.AddListener(() => this.onUnitHitShit.Invoke());
+		spawnedUnit.onHitWater.AddListener(() => this.onUnitHitWater.Invoke());
 	}
 }
