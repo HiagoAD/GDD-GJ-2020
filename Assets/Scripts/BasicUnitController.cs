@@ -35,21 +35,22 @@ public class BasicUnitController : MonoBehaviour {
 		return this.goingToDestination == destination;
 	}
 
-	public void OnHitTrap(BaseTrap trap)
-	{
-		if (trap is ManholeTrap)
-		{
+	public void OnHitTrap(BaseTrap trap) {
+		if (trap is ManholeTrap) {
 			if (!(this.hasRainBoots || this.hasUmbrella))
 				GoBackHome();
-		} else if (trap is DoveTrap)
-		{
+		} else if (trap is DoveTrap) {
 			if (this.hasUmbrella)
 				this.hasUmbrella = false;
 			else
 				GoBackHome();
-        } else if (trap is RatTrap)
-        {
-			Debug.Log("Leptospirose");
+        } else if (trap is RatTrap) {
+			if (this.hasUmbrella)
+				this.hasUmbrella = false;
+			else if (this.hasRainBoots)
+				this.hasRainBoots = false;
+			else
+				GoBackHome();
         }
 	}
 
