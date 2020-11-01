@@ -31,6 +31,7 @@ public class BasicUnitController : MonoBehaviour {
 	private bool goingToDestination = true;
 
 	private Rigidbody2D rb;
+	private Animator active;
 
 	void Awake () {
 		this.rb = GetComponent<Rigidbody2D> ();
@@ -52,16 +53,20 @@ public class BasicUnitController : MonoBehaviour {
     {
         if(hasRainBoots && hasUmbrella)
         {
-			umbrellaBoot.gameObject.SetActive(true);			
+			umbrellaBoot.gameObject.SetActive(true);
+			active = umbrellaBoot;
         } else if(hasRainBoots)
         {
 			boot.gameObject.SetActive(true);
+			active = boot;
         } else if(hasUmbrella)
         {
 			umbrella.gameObject.SetActive(true);
+			active = umbrella;
         } else
         {
 			baseSkin.gameObject.SetActive(true);
+			active = baseSkin;
         }
     }
 
@@ -78,24 +83,52 @@ public class BasicUnitController : MonoBehaviour {
 		return this.goingToDestination == destination;
 	}
 
-	public void OnHitTrap(BaseTrap trap) {
+	public bool OnHitTrap(BaseTrap trap) {
 		if (trap is ManholeTrap) {
-			if (!(this.hasRainBoots || this.hasUmbrella))
+			if (!(this.hasRainBoots /*|| this.hasUmbrella*/))
+            {
+				ActiveAnimation(defeatedWater);
 				GoBackHome();
+            }
+			return true;
 		} else if (trap is DoveTrap) {
 			if (this.hasUmbrella)
 				this.hasUmbrella = false;
 			else
+            {
+				ActiveAnimation(defeatedShitBoot);
 				GoBackHome();
-        } else if (trap is RatTrap) {
+			}
+
+			return true;
+		} else if (trap is RatTrap) {
 			if (this.hasUmbrella)
+			{
 				this.hasUmbrella = false;
+				if (this.hasRainBoots) ActiveAnimation(boot);
+				else ActiveAnimation(baseSkin);
+				return true;
+			}
 			else if (this.hasRainBoots)
+			{
 				this.hasRainBoots = false;
+				if (this.hasUmbrella) ActiveAnimation(umbrella);
+				else ActiveAnimation(baseSkin);
+				return true;
+			}
 			else
-				GoBackHome();
+				return false;
         }
+
+		return false;
 	}
+
+	private void ActiveAnimation(Animator toActive)
+    {
+		active.gameObject.SetActive(false);
+		toActive.gameObject.SetActive(true);
+		active = toActive;
+    }
 
 	private bool RollChance(float chance) {
 		return Random.Range(0f, 1f) <= chance;
@@ -106,6 +139,7 @@ public class BasicUnitController : MonoBehaviour {
 		this.rb.velocity = direction * this.speed;
 		this.transform.localScale = new Vector3(-1, 1, 1);
 		this.goingToDestination = false;
+		GetComponent<Collider2D>().enabled = false;
 	}
 
 	private void GoToDestination () {

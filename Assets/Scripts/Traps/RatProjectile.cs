@@ -18,8 +18,8 @@ public class RatProjectile : MonoBehaviour
         BasicUnitController unitController = collision.gameObject.GetComponent<BasicUnitController>();
         if (unitController != null)
         {
-            unitController.OnHitTrap(parent);
-            Destroy(gameObject);
+            if(unitController.OnHitTrap(parent))
+                Destroy(gameObject);
         }
     }
 }

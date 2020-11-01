@@ -15,4 +15,4 @@ MonoBehaviour:
   initialUnitsPerSecond: 0.5
   unitsPerSecondIncrease: 0.01
   rainBootsChance: 0
-  umbrellaChance: 0
+  umbrellaChance: 100
