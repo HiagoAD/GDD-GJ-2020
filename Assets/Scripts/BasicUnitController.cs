@@ -61,12 +61,14 @@ public class BasicUnitController : MonoBehaviour {
 	private void GoBackHome () {
 		Vector3 direction = (startPoint.position - destinationPoint.position).normalized;
 		this.rb.velocity = direction * this.speed;
+		this.transform.localScale = new Vector3(-1, 1, 1);
 		this.goingToDestination = false;
 	}
 
 	private void GoToDestination () {
 		Vector3 direction = (destinationPoint.position - startPoint.position).normalized;
 		this.rb.velocity = direction * this.speed;
+		this.transform.localScale = Vector3.one;
 		this.goingToDestination = true;
 	}
 }
