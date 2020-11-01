@@ -69,7 +69,7 @@ public class ManholeTrap : BaseTrap
         if(Activated)
         {
             BasicUnitController unitController = collision.gameObject.GetComponent<BasicUnitController>();
-            if (unitController != null)
+            if (unitController != null && unitController.IsGoingTo(true))
             {
                 unitController.OnHitTrap(this);
             }

@@ -16,7 +16,7 @@ public class DoveProjectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         BasicUnitController unitController = collision.gameObject.GetComponent<BasicUnitController>();
-        if (unitController != null)
+        if (unitController != null && unitController.IsGoingTo(true))
         {
             unitController.OnHitTrap(parent);
             Destroy(gameObject);

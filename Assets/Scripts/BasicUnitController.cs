@@ -176,7 +176,6 @@ public class BasicUnitController : MonoBehaviour {
 		this.rb.velocity = direction * this.speed;
 		this.transform.localScale = new Vector3(-1, 1, 1);
 		this.goingToDestination = false;
-		GetComponent<Collider2D>().enabled = false;
 		this.onDefeat.Invoke();
 	}
 
