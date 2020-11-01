@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(AudioListener))]
 public class MainGameSoundManager : MonoBehaviour
 {
     [SerializeField] AudioSource startClip;
     [SerializeField] AudioSource loopClip;
 
-    AudioSource source;
     private void Start()
     {
         startClip.Play();
