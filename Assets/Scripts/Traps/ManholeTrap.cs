@@ -8,26 +8,48 @@ public class ManholeTrap : BaseTrap
 {
     [SerializeField] float activeTime = 3f;
     [SerializeField] Sprite timerSprite = null;
+    [SerializeField] Sprite timerBGSprite = null;
+    [SerializeField] Sprite timerFinishedSprite = null;
     [SerializeField] Transform timerTransform = null;
 
     float activatedAt = 0f;
     float deactivatedAt = 0f;
 
     Image timer = null;
+    private void Start()
+    {
+        Image timerBG = new GameObject().AddComponent<Image>();
+        timerBG.sprite = timerBGSprite;
+        timerBG.preserveAspect = true;
 
+        timer = new GameObject().AddComponent<Image>();
+        timer.sprite = timerSprite;
+        timer.preserveAspect = true;
+
+        timer.type = Image.Type.Filled;
+        timer.fillAmount = 1;
+
+        UIFollower follower = timerBG.gameObject.AddComponent<UIFollower>();
+        follower.target = timerTransform;
+
+        timerBG.transform.SetParent(UIController.Instance.transform);
+        timer.transform.SetParent(timerBG.transform);
+        timer.transform.localPosition = Vector3.zero;
+    }
     private void Update()
     {
 
         if(Time.time >= deactivatedAt && Activated)
         {
-            Debug.Log("Deactivating");
-            Destroy(timer.gameObject);
-            timer = null;
             Activated = false;
         }
         else
         {
-            if (timer != null)
+            if (!Activated)
+            {
+                timer.fillAmount = 1;
+            }
+            else
             {
                 timer.fillAmount = (deactivatedAt - Time.time) / activeTime;
             }
@@ -36,37 +58,29 @@ public class ManholeTrap : BaseTrap
 
     protected override void Activate()
     {
+        
         Debug.Log("Active");
+
         Activated = true;
         activatedAt = Time.time;
         deactivatedAt = activatedAt + activeTime;
-
-        if(timer == null)
-        {
-            timer = new GameObject().AddComponent<Image>();
-            timer.sprite = timerSprite;
-
-            timer.type = Image.Type.Filled;
-            timer.fillAmount = 1;
-
-            UIFollower follower = timer.gameObject.AddComponent<UIFollower>();
-            follower.target = timerTransform;
-
-            timer.transform.SetParent(UIController.Instance.transform);
-        }
     }
 
 
     protected override void OnMaxUsageReached()
     {
         canActivate = false;
+        timer.fillAmount = 1;
+        timer.sprite = timerFinishedSprite;
+        timer.type = Image.Type.Simple;
     }
     public override void OnPointerClick(PointerEventData eventData)
     {
-        currentUsage++;
-        if(canActivate)
+        if (canActivate)
         {
             Activate();
+            currentUsage++;
+            timer.fillAmount = ((maxUsage - currentUsage) / (float)maxUsage);
         }
     }
 

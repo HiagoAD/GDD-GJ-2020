@@ -719,6 +719,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869784072}
     m_Modifications:
+    - target: {fileID: 542180620, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4973289723714053332, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -726,6 +730,10 @@ PrefabInstance:
     - target: {fileID: 4973289723714053334, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
       propertyPath: m_Name
       value: RatHolePrefab (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053334, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -793,22 +801,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869784072}
     m_Modifications:
-    - target: {fileID: 6137659146350809124, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 54096565cb1e8e241a556d090776792e, type: 3}
-    - target: {fileID: 6137659146350809124, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137659146350809124, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137659146350809124, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6137659146350809125, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.222
@@ -856,42 +848,6 @@ PrefabInstance:
     - target: {fileID: 6137659146350809176, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
       propertyPath: m_Name
       value: ManholePrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137659146350809178, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137659146350809178, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.101
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137659146350809178, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.7896001
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137659146350809178, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.9399538
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137659146350809178, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
-      propertyPath: m_Size.y
-      value: 0.7062645
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137659146350809178, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.041123033
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137659146350809178, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
-      propertyPath: m_Size.x
-      value: 1.0822461
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137659148033270745, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.942
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137659148033270745, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.073
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
@@ -993,7 +949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &542235735
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1109,10 +1065,6 @@ PrefabInstance:
     - target: {fileID: 4524503766056034615, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524503766056034618, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4524503766056034619, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
       propertyPath: m_Name
@@ -1622,7 +1574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4524503766056034615, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4524503766056034615, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1647,6 +1599,10 @@ PrefabInstance:
     - target: {fileID: 4524503766056034619, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
       propertyPath: m_Name
       value: DovePrefab (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034619, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
@@ -1756,11 +1712,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6137659148033270745, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.942
+      value: 1.612
       objectReference: {fileID: 0}
     - target: {fileID: 6137659148033270745, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.073
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
@@ -2293,7 +2249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1629073116
 Transform:
   m_ObjectHideFlags: 0
@@ -2460,11 +2416,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6137659148033270745, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.942
+      value: 1.612
       objectReference: {fileID: 0}
     - target: {fileID: 6137659148033270745, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.073
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
@@ -2847,6 +2803,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869784072}
     m_Modifications:
+    - target: {fileID: 542180620, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4973289723714053332, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -2854,6 +2814,10 @@ PrefabInstance:
     - target: {fileID: 4973289723714053334, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
       propertyPath: m_Name
       value: RatHolePrefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053334, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2885,7 +2849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3033,7 +2997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4524503766056034615, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4524503766056034615, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3054,6 +3018,10 @@ PrefabInstance:
     - target: {fileID: 4524503766056034619, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
       propertyPath: m_Name
       value: DovePrefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034619, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
@@ -3375,10 +3343,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869784072}
     m_Modifications:
-    - target: {fileID: 4973289723714053332, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4973289723714053334, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
       propertyPath: m_Name
       value: RatHolePrefab
@@ -3426,14 +3390,6 @@ PrefabInstance:
     - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}

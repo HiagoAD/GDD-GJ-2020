@@ -44,21 +44,21 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.041123033, y: 0.9399538}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.101, y: 2.7896001}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0822461, y: 0.7062645}
   m_EdgeRadius: 0
 --- !u!212 &6137659146350809124
 SpriteRenderer:
@@ -100,8 +100,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ef87f0a19733158499a827054e4d3bc6, type: 3}
-  m_Color: {r: 0, g: 0.007237196, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 54096565cb1e8e241a556d090776792e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -125,7 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxUsage: 2
   activeTime: 3
-  timerSprite: {fileID: 21300000, guid: 2c43dc30ce6f86347b67096f3f0c7db9, type: 3}
+  timerSprite: {fileID: 21300000, guid: 78ce831050bdf214cbe0b09d09b0b01a, type: 3}
+  timerBGSprite: {fileID: 21300000, guid: 67b5bbffb6e90144bb6783d996188615, type: 3}
+  timerFinishedSprite: {fileID: 21300000, guid: 139008b6862059e448e4dcbf099a5121, type: 3}
   timerTransform: {fileID: 6137659148033270745}
 --- !u!1 &6137659148033270750
 GameObject:
@@ -151,7 +153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6137659148033270750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.612, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6137659146350809125}

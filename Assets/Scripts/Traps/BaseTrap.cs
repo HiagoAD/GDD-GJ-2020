@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class BaseTrap : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] int maxUsage = 1;
+    [SerializeField] protected int maxUsage = 1;
 
     public bool Activated { get; protected set; } = false;
 
@@ -17,12 +17,11 @@ public class BaseTrap : MonoBehaviour, IPointerClickHandler
         get { return _currentUsage; }
         set
         {
+            _currentUsage = value;
             if (_currentUsage >= maxUsage)
             {
                 OnMaxUsageReached();
-            } else
-            {
-                _currentUsage = value;
+                _currentUsage = maxUsage;
             }
         }
     }
