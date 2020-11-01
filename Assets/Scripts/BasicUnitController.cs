@@ -14,15 +14,58 @@ public class BasicUnitController : MonoBehaviour {
 	private Transform startPoint;
 	private Transform destinationPoint;
 
+	[Header("Animations")]
+	[SerializeField] private Animator baseSkin;
+	[SerializeField] private Animator umbrellaBoot;
+	[SerializeField] private Animator umbrella;
+	[SerializeField] private Animator boot;
+	[SerializeField] private Animator shitHit;
+	[SerializeField] private Animator shitHitBoot;
+	[SerializeField] private Animator waterHit;
+	[SerializeField] private Animator ratDebuffBoot;
+	[SerializeField] private Animator ratDebuffUmbrella;
+	[SerializeField] private Animator ratDebuffBootUmbrella;
+	[SerializeField] private Animator defeatedShitBoot;
+	[SerializeField] private Animator defeatedWater;
+
 	private bool goingToDestination = true;
 
 	private Rigidbody2D rb;
 
 	void Awake () {
 		this.rb = GetComponent<Rigidbody2D> ();
+		baseSkin.gameObject.SetActive(false);
+		umbrellaBoot.gameObject.SetActive(false);
+		umbrella.gameObject.SetActive(false);
+		boot.gameObject.SetActive(false);
+		shitHit.gameObject.SetActive(false);
+		shitHitBoot.gameObject.SetActive(false);
+		waterHit.gameObject.SetActive(false);
+		ratDebuffBoot.gameObject.SetActive(false);
+		ratDebuffUmbrella.gameObject.SetActive(false);
+		ratDebuffBootUmbrella.gameObject.SetActive(false);
+		defeatedShitBoot.gameObject.SetActive(false);
+		defeatedWater.gameObject.SetActive(false);
 	}
 
-	public void Initialize (Transform startPoint, Transform destinationPoint, LevelDataObject levelDef) {
+    private void Start()
+    {
+        if(hasRainBoots && hasUmbrella)
+        {
+			umbrellaBoot.gameObject.SetActive(true);			
+        } else if(hasRainBoots)
+        {
+			boot.gameObject.SetActive(true);
+        } else if(hasUmbrella)
+        {
+			umbrella.gameObject.SetActive(true);
+        } else
+        {
+			baseSkin.gameObject.SetActive(true);
+        }
+    }
+
+    public void Initialize (Transform startPoint, Transform destinationPoint, LevelDataObject levelDef) {
 		this.hasRainBoots = RollChance(levelDef.RainBootsChance);
 		this.hasUmbrella = RollChance(levelDef.UmbrellaChance);
 
