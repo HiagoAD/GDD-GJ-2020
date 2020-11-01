@@ -44,6 +44,9 @@ public class BasicUnitController : MonoBehaviour {
 		} else if (trap is DoveTrap)
         {
 			Debug.Log("Dove Shit");
+        } else if (trap is RatTrap)
+        {
+			Debug.Log("Leptospirose");
         }
 	}
 

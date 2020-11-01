@@ -386,7 +386,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6137659146350809125, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.66
       objectReference: {fileID: 0}
     - target: {fileID: 6137659146350809125, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
       propertyPath: m_LocalPosition.y
@@ -431,6 +431,10 @@ PrefabInstance:
     - target: {fileID: 6137659146350809176, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
       propertyPath: m_Name
       value: ManholePrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137659146350809178, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2b0709c56d7e34bb459365f2ffcaff, type: 3}
@@ -484,6 +488,10 @@ PrefabInstance:
     - target: {fileID: 4524503766056034615, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034618, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4524503766056034619, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
       propertyPath: m_Name
@@ -743,6 +751,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56c2d68ea62be2145baa9b8b1598594f, type: 3}
+--- !u!1001 &4973289723791440451
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4973289723714053332, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053334, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_Name
+      value: RatHolePrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973289723714053338, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aac6499e2cf994d4da10d196a20ea6bc, type: 3}
 --- !u!1001 &5616486215252400991
 PrefabInstance:
   m_ObjectHideFlags: 0

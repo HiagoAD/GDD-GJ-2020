@@ -4,12 +4,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
-public class DoveProjectile : MonoBehaviour
+public class RatProjectile : MonoBehaviour
 {
-    DoveTrap parent = null;
-    public void Init(float speed, DoveTrap parent)
+    RatTrap parent = null;
+    public void Init(float speed, RatTrap parent)
     {
-        GetComponent<Rigidbody2D>().velocity = Vector2.down * speed;
+        GetComponent<Rigidbody2D>().velocity = Vector2.left * speed;
         this.parent = parent;
     }
 
