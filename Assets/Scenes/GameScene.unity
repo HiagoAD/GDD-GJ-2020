@@ -158,6 +158,7 @@ MonoBehaviour:
   startClip: {fileID: 275427488}
   loopClip: {fileID: 165437382}
   lifeLoss: {fileID: 8300000, guid: d0dd31987e1c93c4591a904182f9cb9b, type: 3}
+  doveShit: {fileID: 8300000, guid: 57f268a987f5a1e4aa33c1eee54d400b, type: 3}
   unitDefeated:
   - {fileID: 8300000, guid: 5c21144ecfff2d7409676561ebb7de34, type: 3}
   - {fileID: 8300000, guid: 06d2075380db1b64eb94157d848129a7, type: 3}
@@ -906,6 +907,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869784072}
     m_Modifications:
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4151521}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainGameSoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayDoveShit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4524503766056034615, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.29
@@ -968,6 +997,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869784072}
     m_Modifications:
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4151521}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainGameSoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayDoveShit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4524503766056034615, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.31
@@ -1615,6 +1672,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1869784072}
     m_Modifications:
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4151521}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainGameSoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayDoveShit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524503766056034612, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
+      propertyPath: onDoveShit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4524503766056034615, guid: 72d0bf463abf6f643924f10d696725e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.23

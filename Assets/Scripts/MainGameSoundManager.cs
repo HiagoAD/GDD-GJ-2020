@@ -10,6 +10,7 @@ public class MainGameSoundManager : MonoBehaviour
 
     [Header("SFX")]
     [SerializeField] AudioClip lifeLoss = null;
+	[SerializeField] AudioClip doveShit = null;
     [SerializeField] AudioClip[] unitDefeated = null;
 	[SerializeField] AudioClip unitHitRat = null;
 	[SerializeField] AudioClip unitHitShit = null;
@@ -29,6 +30,10 @@ public class MainGameSoundManager : MonoBehaviour
 
     public void PlayLifeLoss() {
         this.startClip.PlayOneShot(this.lifeLoss);
+    }
+
+    public void PlayDoveShit() {
+        this.startClip.PlayOneShot(this.doveShit);
     }
 
     public void PlayUnitDefeatedSFX() {
