@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -87,17 +88,23 @@ public class BasicUnitController : MonoBehaviour {
 		if (trap is ManholeTrap) {
 			if (!(this.hasRainBoots /*|| this.hasUmbrella*/))
             {
-				ActiveAnimation(defeatedWater);
-				GoBackHome();
+				StartCoroutine(ActiveHitAnimation(waterHit, defeatedWater, GoBackHome));
+				//ActiveAnimation(defeatedWater);
+				//GoBackHome();
             }
 			return true;
 		} else if (trap is DoveTrap) {
 			if (this.hasUmbrella)
+            {
+				if (hasRainBoots) ActiveAnimation(boot);
+				else ActiveAnimation(baseSkin);
 				this.hasUmbrella = false;
+            }
 			else
             {
-				ActiveAnimation(defeatedShitBoot);
-				GoBackHome();
+				if (hasRainBoots) StartCoroutine(ActiveHitAnimation(shitHitBoot, defeatedShitBoot, GoBackHome));
+				else StartCoroutine(ActiveHitAnimation(shitHit, defeatedShitBoot, GoBackHome));
+				//GoBackHome();
 			}
 
 			return true;
@@ -105,15 +112,15 @@ public class BasicUnitController : MonoBehaviour {
 			if (this.hasUmbrella)
 			{
 				this.hasUmbrella = false;
-				if (this.hasRainBoots) ActiveAnimation(boot);
-				else ActiveAnimation(baseSkin);
+				if (this.hasRainBoots) StartCoroutine(ActiveHitAnimation(ratDebuffBootUmbrella, boot, () => { }));//ActiveAnimation(boot);
+				else StartCoroutine(ActiveHitAnimation(ratDebuffUmbrella, baseSkin, () => { }));
 				return true;
 			}
 			else if (this.hasRainBoots)
 			{
 				this.hasRainBoots = false;
-				if (this.hasUmbrella) ActiveAnimation(umbrella);
-				else ActiveAnimation(baseSkin);
+				if (this.hasUmbrella) StartCoroutine(ActiveHitAnimation(ratDebuffBootUmbrella, umbrella, () => { }));
+				else StartCoroutine(ActiveHitAnimation(ratDebuffBoot, baseSkin, () => { }));
 				return true;
 			}
 			else
@@ -130,8 +137,29 @@ public class BasicUnitController : MonoBehaviour {
 		active = toActive;
     }
 
+	private IEnumerator ActiveHitAnimation(Animator hitToActive, Animator walkToActive, Action completeCallback)
+    {
+		Vector3 oldVec = rb.velocity;
+		rb.velocity = Vector3.zero;
+		GetComponent<Collider2D>().enabled = false;
+
+		active.gameObject.SetActive(false);
+		hitToActive.gameObject.SetActive(true);
+
+		yield return new WaitForSeconds(hitToActive.GetCurrentAnimatorStateInfo(0).length);
+
+		hitToActive.gameObject.SetActive(false);
+		walkToActive.gameObject.SetActive(true);
+		active = walkToActive;
+		rb.velocity = oldVec;
+
+		GetComponent<Collider2D>().enabled = true;
+
+		completeCallback();
+    }
+
 	private bool RollChance(float chance) {
-		return Random.Range(0f, 1f) <= chance;
+		return UnityEngine.Random.Range(0f, 1f) <= chance;
 	}
 
 	private void GoBackHome () {
