@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ManholeTrap : BaseTrap
 {
+    [Header("Manhole Trap")]
     [SerializeField] float activeTime = 3f;
     [SerializeField] Sprite timerSprite = null;
     [SerializeField] Sprite timerBGSprite = null;
@@ -58,30 +56,11 @@ public class ManholeTrap : BaseTrap
 
     protected override void Activate()
     {
-        
         Debug.Log("Active");
 
         Activated = true;
         activatedAt = Time.time;
         deactivatedAt = activatedAt + activeTime;
-    }
-
-
-    protected override void OnMaxUsageReached()
-    {
-        canActivate = false;
-        timer.fillAmount = 1;
-        timer.sprite = timerFinishedSprite;
-        timer.type = Image.Type.Simple;
-    }
-    public override void OnPointerClick(PointerEventData eventData)
-    {
-        if (canActivate)
-        {
-            Activate();
-            currentUsage++;
-            timer.fillAmount = ((maxUsage - currentUsage) / (float)maxUsage);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

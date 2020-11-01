@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class RatTrap : BaseTrap
 {
+    [Header("Rat Trap")]
     [SerializeField] RatProjectile projectilePrefab;
     [SerializeField] float startSpeed = 1f;
     [SerializeField] Transform startPosition = null;
@@ -36,14 +34,6 @@ public class RatTrap : BaseTrap
         counter.transform.localPosition = Vector3.zero;
     }
 
-    protected override void OnMaxUsageReached()
-    {
-        canActivate = false;
-        counter.fillAmount = 1;
-        counter.sprite = counterFinishedSprite;
-        counter.type = Image.Type.Simple;
-    }
-
     protected override void Activate()
     {
         RatProjectile proj = Instantiate(projectilePrefab);
@@ -52,14 +42,7 @@ public class RatTrap : BaseTrap
         proj.transform.localPosition = -Vector3.forward;
     }
 
-
-    public override void OnPointerClick(PointerEventData eventData)
-    {
-        if (canActivate)
-        {
-            Activate();
-            currentUsage++;
-            counter.fillAmount = ((maxUsage - currentUsage) / (float)maxUsage);
-        }
+    void Update() {
+        counter.fillAmount = 1 - this.usageFraction;
     }
 }
