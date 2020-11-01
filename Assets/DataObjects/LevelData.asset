@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialUnitsPerSecond: 0.5
   unitsPerSecondIncrease: 0.01
-  rainBootsChance: 0
-  umbrellaChance: 100
+  rainBootsChance: 0.5
+  umbrellaChance: 0.5

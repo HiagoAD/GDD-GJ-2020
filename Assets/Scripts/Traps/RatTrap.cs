@@ -32,6 +32,7 @@ public class RatTrap : BaseTrap
         counterBG.transform.SetParent(UIController.Instance.transform);
         counter.transform.SetParent(counterBG.transform);
         counter.transform.localPosition = Vector3.zero;
+        counterBG.transform.localScale = Vector3.one;
     }
 
     protected override void Activate()

@@ -33,6 +33,7 @@ public class ManholeTrap : BaseTrap
         timerBG.transform.SetParent(UIController.Instance.transform);
         timer.transform.SetParent(timerBG.transform);
         timer.transform.localPosition = Vector3.zero;
+        timerBG.transform.localScale = Vector3.one;
     }
     private void Update()
     {
