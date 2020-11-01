@@ -240,6 +240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1306052513}
   scoreData: {fileID: 11400000, guid: a5949d407610e224988445b26ad6f0d3, type: 2}
+  audioSource: {fileID: 443840811}
+  clickSFX: {fileID: 8300000, guid: 65e1d0885a047d543a4dacd34c7f76a1, type: 3}
 --- !u!1 &443840807
 GameObject:
   m_ObjectHideFlags: 0
