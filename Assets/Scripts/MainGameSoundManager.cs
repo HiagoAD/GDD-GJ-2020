@@ -7,6 +7,7 @@ public class MainGameSoundManager : MonoBehaviour
     [Header("Sources")]
     [SerializeField] AudioSource startClip;
     [SerializeField] AudioSource loopClip;
+    [SerializeField] AudioSource sfxClip;
 
     [Header("SFX")]
     [SerializeField] AudioClip lifeLoss = null;
@@ -29,28 +30,28 @@ public class MainGameSoundManager : MonoBehaviour
     }
 
     public void PlayLifeLoss() {
-        this.startClip.PlayOneShot(this.lifeLoss);
+        this.sfxClip.PlayOneShot(this.lifeLoss);
     }
 
     public void PlayDoveShit() {
-        this.startClip.PlayOneShot(this.doveShit);
+        this.sfxClip.PlayOneShot(this.doveShit);
     }
 
     public void PlayUnitDefeatedSFX() {
         AudioClip chosenAudio = ChooseArrayElement(this.unitDefeated);
-        this.startClip.PlayOneShot(chosenAudio);
+        this.sfxClip.PlayOneShot(chosenAudio);
     }
 
     public void PlayUnitHitRat() {
-        this.startClip.PlayOneShot(this.unitHitRat);
+        this.sfxClip.PlayOneShot(this.unitHitRat);
     }
 
     public void PlayUnitHitShit() {
-        this.startClip.PlayOneShot(this.unitHitShit);
+        this.sfxClip.PlayOneShot(this.unitHitShit);
     }
 
     public void PlayUnitHitWater() {
-        this.startClip.PlayOneShot(this.unitHitWater);
+        this.sfxClip.PlayOneShot(this.unitHitWater);
     }
 
     private T ChooseArrayElement<T>(T[] array) {

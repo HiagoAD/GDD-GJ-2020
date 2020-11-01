@@ -57,3 +57,4 @@ sysinfo.txt
 *.zip
 # Crashlytics generated file
 crashlytics-build.properties
+Build_Web/
