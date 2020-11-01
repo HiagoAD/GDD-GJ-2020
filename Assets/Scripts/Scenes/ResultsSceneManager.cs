@@ -9,7 +9,7 @@ public class ResultsSceneManager : MonoBehaviour {
 	[SerializeField] private ScoreDataObject scoreData = null;
 
 	void Start () {
-		this.scoreText.text = "Score: " + this.scoreData.score;
+		this.scoreText.text = "Danilos sóbrios: " + this.scoreData.score;
 	}
 
 	public void MoveToGameScene () {
