@@ -1,13 +1,15 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 [RequireComponent(typeof(AudioListener))]
 public class MainGameSoundManager : MonoBehaviour
 {
+    [Header("Sources")]
     [SerializeField] AudioSource startClip;
     [SerializeField] AudioSource loopClip;
+
+    [Header("SFX")]
+    [SerializeField] AudioClip lifeLoss = null;
 
     private void Start()
     {
@@ -19,5 +21,9 @@ public class MainGameSoundManager : MonoBehaviour
     {
         yield return new WaitForSeconds(startClip.clip.length - 0.5f);
         loopClip.Play();
+    }
+
+    public void PlayLifeLoss() {
+        this.startClip.PlayOneShot(this.lifeLoss);
     }
 }

@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startClip: {fileID: 275427488}
   loopClip: {fileID: 165437382}
+  lifeLoss: {fileID: 8300000, guid: d0dd31987e1c93c4591a904182f9cb9b, type: 3}
 --- !u!20 &4151522
 Camera:
   m_ObjectHideFlags: 0
@@ -1214,9 +1215,37 @@ PrefabInstance:
       value: LifeManager
       objectReference: {fileID: 0}
     - target: {fileID: 1977372759190990443, guid: 06e42075af9765845a226d4e23943e23, type: 3}
+      propertyPath: onLifeUpdated.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977372759190990443, guid: 06e42075af9765845a226d4e23943e23, type: 3}
       propertyPath: onLifeUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1354191690}
+    - target: {fileID: 1977372759190990443, guid: 06e42075af9765845a226d4e23943e23, type: 3}
+      propertyPath: onLifeUpdated.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MainGameSoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977372759190990443, guid: 06e42075af9765845a226d4e23943e23, type: 3}
+      propertyPath: onLifeUpdated.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977372759190990443, guid: 06e42075af9765845a226d4e23943e23, type: 3}
+      propertyPath: onLifeUpdated.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977372759190990443, guid: 06e42075af9765845a226d4e23943e23, type: 3}
+      propertyPath: onLifeUpdated.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4151521}
+    - target: {fileID: 1977372759190990443, guid: 06e42075af9765845a226d4e23943e23, type: 3}
+      propertyPath: onLifeUpdated.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayLifeLoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977372759190990443, guid: 06e42075af9765845a226d4e23943e23, type: 3}
+      propertyPath: onLifeUpdated.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06e42075af9765845a226d4e23943e23, type: 3}
 --- !u!4 &1500801840 stripped
